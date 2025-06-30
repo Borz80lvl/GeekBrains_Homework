@@ -1,30 +1,30 @@
 # Task 1
-sum = 0
-with open('numbers.txt') as numbers_file:
-    for line in numbers_file:
-        sum += int(line.strip())
-with open('answers.txt','w') as answers_file:
-    answers_file.write(f'{sum}')
+# sum = 0
+# with open('txt/numbers.txt') as numbers_file:
+#     for line in numbers_file:
+#         sum += int(line.strip())
+# with open('txt/answers.txt','w') as answers_file:
+#     answers_file.write(f'{sum}')
 
 # Task 2
-# with open('zen.txt') as zen_file:
+# with open('txt/zen.txt') as zen_file:
 #     zen_lines = zen_file.readlines()
 # print(*zen_lines[::-1])
 
-  # Task 3
-# with open('first_tour.txt') as first_tour_file:
+# Task 3
+# with open('txt/first_tour.txt') as first_tour_file:
 #     K = int(first_tour_file.readline().strip()) # балл выще которого нужно набрать
 #     # список участников состоит из списков [Имя, Фамилия, Балл]
 #     participiants = [line.strip().split() for line in first_tour_file] #список участников
 #     # такой же список но с участниками свыше балла K (2 по индексу элемент в списках)
 #     second_tour_people = [human for human in participiants if int(human[2]) > K]
 #     K = len(second_tour_people) # новое количество участников
-  # Пузырьковая сортировка по баллам
+# # Пузырьковая сортировка по баллам
 # for i in range(len(second_tour_people) - 1):
 #     for j in range(i + 1, len(second_tour_people)):
 #         if int(second_tour_people[i][2]) < int(second_tour_people[j][2]):
 #             second_tour_people[i],second_tour_people[j] = second_tour_people[j],second_tour_people[i]
-# with open("second_tour.txt",'w') as second_tour_file:
+# with open("txt/second_tour.txt",'w') as second_tour_file:
 #     second_tour_file.write(f'{K}\n')
 #     for i in range(len(second_tour_people)):
 #         person = second_tour_people[i] 
@@ -33,7 +33,7 @@ with open('answers.txt','w') as answers_file:
 
 # Task 4
 # from collections import Counter
-# with open('text.txt') as text_file:
+# with open('txt/text.txt') as text_file:
 #     text = ""
 #     for line in text_file:
 #         if not line[-1].isalpha():
@@ -50,7 +50,7 @@ with open('answers.txt','w') as answers_file:
 #         elif analyse[i][-1] == analyse[j][-1] and ord(analyse[i][0]) > ord(analyse[j][0]):
 #             analyse[i],analyse[j] = analyse[j],analyse[i]
 # analyse = dict(analyse)
-# with open('analyse.txt','w') as analyse_file:
+# with open('txt/analyse.txt','w') as analyse_file:
 #     for key,value in analyse.items():
 #         analyse_file.write(f'{key} {value}\n')
 
@@ -67,7 +67,7 @@ with open('answers.txt','w') as answers_file:
 
 # for key,value in dict(enumerate(alfabet)).items():
 #   alfabet_dict[value] = key
-# with zipfile.ZipFile("/home/borz80lvl/Downloads/voina_i_mir.txt.zip") as voina_i_mir_zip:
+# with zipfile.ZipFile("voina_i_mir.txt.zip") as voina_i_mir_zip:
 #   for file in voina_i_mir_zip.namelist():
 #     if file[-4:] == '.txt':
 #       filename = file
@@ -90,6 +90,6 @@ with open('answers.txt','w') as answers_file:
 #         elif analyse[i][0] in alfabet and analyse[j][0] in alfabet:   
 #           if alfabet_dict[analyse[i][0]] > alfabet_dict[analyse[j][0]]:
 #             analyse[i],analyse[j] = analyse[j],analyse[i]
-# with open("voina_i_mir.txt",'w') as voina_i_mir:  
+# with open("txt/voina_i_mir.txt",'w') as voina_i_mir:  
 #   for key,value in dict(analyse).items():
 #     voina_i_mir.write(f'{key} - {value}\n')
