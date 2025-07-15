@@ -1,28 +1,3 @@
-class Printer {
-
-
-    public static void main(String[] args) {
-        // Факториал
-        int n = 5;
-        System.out.println(Answer.Factorial(n));
-
-        //Вывод всех четных чисел от 1 до 100
-        Answer.printEvenNums();
-
-        //Подсчет суммы цифр числа
-        int number = 12345;
-        System.out.println(Answer.sumDigits(number));
-
-        //Нахождение максимального из трех чисел
-        int a = 5, b = 10, c = 3;
-        System.out.println(Answer.findMaxOfTwo(a, b));
-        System.out.println(Answer.findMaxOfThree(a, b, c));
-    }
-
-
-}
-
-
 class Answer {
     // Нахождение факториала числа
     public static int Factorial(int n ) {
