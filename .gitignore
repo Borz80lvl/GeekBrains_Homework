@@ -2,16 +2,16 @@ Python/.venv
 Java/.idea
 Java/pom.xml
 
-target/
+Java/target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
 ### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
+Java/.idea/modules.xml
+Java/.idea/jarRepositories.xml
+Java/.idea/compiler.xml
+Java/.idea/libraries/
 *.iws
 *.iml
 *.ipr
@@ -36,7 +36,7 @@ build/
 !**/src/test/**/build/
 
 ### VS Code ###
-.vscode/
+Java/.vscode/
 
 ### Mac OS ###
 .DS_Store# Default ignored files
