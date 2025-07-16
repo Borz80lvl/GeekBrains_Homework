@@ -1,51 +1,55 @@
-class Answer {
-    // Нахождение факториала числа
-    public static int Factorial(int n ) {
-        int sum = 1;
-        if (n < 0) {
-            return -1;
-        } else if (n == 0) {
-            return 0;
+class  task1 {
+
+    class Answer {
+        // Нахождение факториала числа
+        public static int Factorial(int n ) {
+            int sum = 1;
+            if (n < 0) {
+                return -1;
+            } else if (n == 0) {
+                return 0;
+            }
+            for (int i = n; i != 0; i--) {
+                sum *= i;
+            }
+            return sum;
+
         }
-        for (int i = n; i != 0; i--) {
-            sum *= i;
+
+        //Вывод всех четных чисел от 1 до 100
+        public static void printEvenNums() {
+            for (int i = 2; i < 101; i+=2) {
+                System.out.println(i);
+            }
         }
-        return sum;
 
-    }
 
-    //Вывод всех четных чисел от 1 до 100
-    public static void printEvenNums() {
-        for (int i = 2; i < 101; i+=2) {
-            System.out.println(i);
+        //Подсчет суммы цифр числа
+        public  static int sumDigits(int number) {
+            String stringNumber = Integer.toString(number);
+            int sum = 0;
+            for (int i = 0; i != stringNumber.length(); i++) {
+                sum += Integer.parseInt(Character.toString(stringNumber.charAt(i)));
+            }
+            return sum;
         }
-    }
 
 
-    //Подсчет суммы цифр числа
-    public  static int sumDigits(int number) {
-        String stringNumber = Integer.toString(number);
-        int sum = 0;
-        for (int i = 0; i != stringNumber.length(); i++) {
-            sum += Integer.parseInt(Character.toString(stringNumber.charAt(i)));
+        //Нахождение максимального из двух чисел
+        public  static  int findMaxOfTwo(int a,int b) {
+            return Math.max(a, b);
         }
-        return sum;
+
+        //Нахождение максимального из трех чисел
+        public static int findMaxOfThree(int a, int b, int c) {
+            if (a > b & a > c) {
+                return a;
+            } else if (b > a & b > c) {
+                return b;
+            } return c;
+        }
+
+
     }
-
-
-    //Нахождение максимального из двух чисел
-    public  static  int findMaxOfTwo(int a,int b) {
-        return Math.max(a, b);
-    }
-
-    //Нахождение максимального из трех чисел
-    public static int findMaxOfThree(int a, int b, int c) {
-        if (a > b & a > c) {
-            return a;
-        } else if (b > a & b > c) {
-            return b;
-        } return c;
-    }
-
 
 }
