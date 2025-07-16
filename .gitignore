@@ -2,7 +2,7 @@ Python/.venv
 Java/.idea
 Java/pom.xml
 
-Java/target/
+Java/Introduction and basic API/target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
