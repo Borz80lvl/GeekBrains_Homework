@@ -1,6 +1,4 @@
-import javax.xml.transform.Source;
-import java.sql.SQLOutput;
-import java.util.Arrays;
+import java.util.*;
 
 public class Printer {
 
@@ -14,8 +12,8 @@ public class Printer {
         task1.Answer.printEvenNums();
 
         //Подсчет суммы цифр числа
-        int number = 12345;
-        System.out.println(task1.Answer.sumDigits(number));
+        n = 12345;
+        System.out.println(task1.Answer.sumDigits(n));
 
         //Нахождение максимального из трех чисел
         int a = 5, b = 10, c = 3;
@@ -46,21 +44,66 @@ public class Printer {
         task2.ArrayOperations.findMinMax(array);
 
         // Удаление отрицательных значений из массива
-        int[] numbers = new int[]{-1, 2, -3, 4, -5, 6};
-        System.out.println(Arrays.toString(task3.FilterNegative.filterNegative(numbers)));
+        array = new int[]{-1, 2, -3, 4, -5, 6};
+        System.out.println(Arrays.toString(task3.FilterNegative.filterNegative(array)));
 
         // Уникальные числа
-        int[] uniqueArray = new int[] {1, 2, 2, 3, 4, 4, 5};
-        System.out.println(Arrays.toString(task3.UniqueElements.getUniqueElements(uniqueArray)));
+        array = new int[] {1, 2, 2, 3, 4, 4, 5};
+        System.out.println(Arrays.toString(task3.UniqueElements.getUniqueElements(array)));
 
         //Длина слов
         String[] strings = new String[]{"cat", "elephant", "dog", "giraffe"};
         System.out.println(Arrays.toString(task3.FilterStrings.filterShortStrings(strings)));
 
         //Среднее значение массива
-        int[] meanArray = new  int[]{4, 2, 7, 5, 1};
-        System.out.println(task3.AverageCalculator.calculateAverage(meanArray));
+        array = new  int[]{4, 2, 7, 5, 1};
+        System.out.println(task3.AverageCalculator.calculateAverage(array));
 
+        //Удаление нечетных строк
+        List<String> list = new ArrayList<>();
+        list.add("apple");
+        list.add("banana");
+        list.add("apple");
+        list.add("pear");
+        list.add("banana");
+        list.add("cherry");
+        list.add("pear");
+        LinkedList<String> linkedStrings = new LinkedList<>(list);
+        task4.LLTasks.removeOddLengthStrings(linkedStrings);
+        System.out.println(linkedStrings);
+
+        //Реализация стека
+        task4.MyStack stack = new task4.MyStack();
+        stack.push("apple");
+        stack.push("banana");
+        stack.push("pear");
+        stack.push("grape");
+        System.out.println(stack.getElements());
+        System.out.println(stack.pop());
+        System.out.println(stack.getElements());
+        System.out.println(stack.peek());
+
+        // Количество вхождений слова
+        LinkedList<String> linkedList = new LinkedList<>(list);
+        String value = "apple";
+        System.out.println(task4.ListUtils.countOccurrences(linkedList, value));
+
+        //Сдвиг очереди
+        Deque<Integer> deque = new LinkedList<>();
+        deque.add(1);
+        deque.add(2);
+        deque.add(3);
+        deque.add(4);
+        System.out.println(deque);
+        n = 2;
+        task4.DequeTasks.rotateDeque(deque, n);
+        System.out.println(deque);
+
+        //Удаление слова из очереди
+        Deque<String> stringDeque = new LinkedList<>(list);
+        value = "apple";
+        task4.DequeTasks.removeAllOccurrences(stringDeque, value);
+        System.out.println(stringDeque);
     }
 
 
