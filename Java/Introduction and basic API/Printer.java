@@ -179,6 +179,9 @@ public class Printer {
         System.out.println(Arrays.toString(array));;
         System.out.println("Sorted array:");
         System.out.println(Arrays.toString(task5.MergeSort.Sort(array)));
+
+        //Поиск ноутбуков
+        Laptops.printUserPreferredLaptops();
     }
 
 
