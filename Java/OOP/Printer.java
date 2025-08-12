@@ -1,5 +1,5 @@
-import task1.FamilyTree;
-import task1.Person;
+import task2.*;
+
 
 public class Printer {
 
@@ -13,10 +13,15 @@ public class Printer {
         isabella.setFather(john.getName());
         john.addChild(isabella);
         emma.addChild(isabella);
-        // Добавляем людей в древо
         familyTree.addPerson(john);
         familyTree.addPerson(emma);
         familyTree.addPerson(isabella);
-        System.out.printf("Emma's and John's chils: %s", isabella.getName());
+        System.out.printf("Emma's and John's chils: %s\n", isabella.getName());
+
+        //Task 2
+        isabella.saveToFile();
+        isabella.getFromFile();
+        familyTree.saveToFile();
+        familyTree.getFromFile();
     }
 }
