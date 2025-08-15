@@ -1,28 +1,25 @@
 package service;
 
-import model.FamilyTree;
-import model.Person;
-
 import java.util.Iterator;
 import java.util.List;
 
-public class FamilyTreeIterator implements Iterator<Person> {
+public class FamilyTreeIterator<T> implements Iterator<T> {
     private int count;
-    private List<Person> personList;
+    private List<T> unknowns;
 
-    public FamilyTreeIterator(FamilyTree familyTree) {
+    public FamilyTreeIterator(List<T> objects) {
         this.count = 0;
-        this.personList = familyTree.getPersonList();
+        this.unknowns = objects;
     }
 
     @Override
     public boolean hasNext() {
-        return count < personList.size();
+        return count < unknowns.size();
     }
 
     @Override
-    public Person next() {
+    public T next() {
         if (!hasNext()) return null;
-        return personList.get(count++);
+        return unknowns.get(count++);
     }
 }

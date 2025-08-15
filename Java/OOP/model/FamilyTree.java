@@ -8,35 +8,24 @@ import java.io.ObjectOutputStream;
 import java.util.*;
 
 
-public class FamilyTree implements Serialazable, Iterable<Person> {
-    private TreeMap<String, Person> persons = new TreeMap<>();
+public class FamilyTree<T> implements Serialazable, Iterable<T> {
 
-    private List<Person> personList = new ArrayList<>();
+    private final List<T> unknowns = new ArrayList<>();
 
-    public Person findPersonByName(String name) {
-        return persons.get(name);
+
+    public List<T> getUnknowns() {
+        return unknowns;
     }
 
-    public TreeMap<String, Person> getPersons() {
-        return persons;
+    public void addUnknown(T unknown) {
+        unknowns.add(unknown);
     }
 
-    public List<Person> getPersonList() {
-        return personList;
-    }
 
-    public void addPerson(Person person) {
-        personList.add(person);
-        persons.put(person.getName(), person);
-    }
-
-    public ArrayList<Person> getChildren(String parent) {
-        return persons.get(parent).getChildren();
-    }
 
     @Override
     public String toString() {
-        return personList.toString();
+        return unknowns.toString();
     }
 
     @Override
@@ -60,31 +49,7 @@ public class FamilyTree implements Serialazable, Iterable<Person> {
 
 
     @Override
-    public Iterator<Person> iterator() {
-        return new FamilyTreeIterator(this);
-    }
-
-    public List<String> sortByName() {
-        List<String> personNames = new ArrayList<>(personList.size());
-        for (Person person : personList) {
-            personNames.add(person.getName());
-        }
-        Collections.sort(personNames);
-        return personNames;
-    }
-
-    public List<Person> sortByBirthYear() {
-        List<Integer> dates = new ArrayList<>(personList.size());
-        List<Person> result = new ArrayList<>(personList.size());
-        for (Person person : personList) {
-            dates.add(person.getDate()[2]);
-        }
-        Collections.sort(dates, Collections.reverseOrder());
-        for (Integer date : dates) {
-            for (Person person : personList) {
-                if (date == person.getDate()[2]) result.add(person);
-            }
-        }
-        return result;
+    public Iterator<T> iterator() {
+        return new FamilyTreeIterator<>(unknowns);
     }
 }
