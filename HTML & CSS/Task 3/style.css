@@ -1,0 +1,72 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.menu {
+  padding-top: 40px;
+  padding-right: 173px;
+  padding-bottom: 84px;
+  padding-left: 173px;
+}
+.menu_logo {
+  margin-bottom: -30px;
+}
+.menu_link_home {
+  color: #f25822;
+  padding-left: 260px;
+  padding-bottom: 55px;
+}
+.menu_link {
+  margin-left: 20px;
+  color: #000000;
+}
+.top_title {
+  margin-left: 173px;
+}
+.top_subtitle {
+  color: #888888;
+  margin-top: 25px;
+  margin-left: 173px;
+}
+.top_img {
+  width: 545px;
+  height: 375px;
+  margin-top: -245px;
+  margin-left: 655px;
+  margin-bottom: 100px;
+}
+.top_button_start {
+  margin-top: 32px;
+  margin-left: 173px;
+  border-top: 15px;
+  border-right: 35px;
+  border-bottom: 15px;
+  border-left: 35px;
+  border-color: #f25822;
+  border-radius: 30px;
+  color: white;
+  background-color: #f25822;
+  border-style: solid;
+}
+.top_button_watch {
+  border-top: 15px;
+  border-right: 35px;
+  border-bottom: 15px;
+  border-left: 35px;
+  border-style: solid;
+  background-color: white;
+  border-radius: 30px;
+  border-color: white;
+  color: #888888;
+}
+.brands {
+  margin-left: 153px;
+}
+.brand {
+  margin-left: 15px;
+}
