@@ -1,37 +1,34 @@
 package model;
 
-import service.Serialazable;
 
 import java.io.*;
 import java.util.ArrayList;
 
 
-public class Person implements Serialazable {
+public class Person extends Member implements Serializable {
 
-
-    private String name;
-    //DD:MM:YYYY
-    private final int[] date;
+    private String firstname = super.firstName;
+    private int birthYear = super.birthYear;
     private String mother;
     private String father;
     private ArrayList<Person> children = new ArrayList<>();
 
     @Override
     public String toString() {
-        return this.name;
+        return this.firstName;
     }
 
-    public Person(String name, int[] date) {
-        this.name = name;
-        this.date = date;
+    public Person(String firstName, int birthYear) {
+        this.firstName = firstName;
+        this.birthYear = birthYear;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return this.firstName;
     }
 
-    public int[] getDate() {
-        return date;
+    public int getBirthYear() {
+        return this.birthYear;
     }
 
     public String getMother() {
@@ -60,9 +57,8 @@ public class Person implements Serialazable {
     }
 
 
-    @Override
     public Object getFromFile() {
-        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(name))) {
+        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(this.firstName))) {
             return inputStream.readObject();
         } catch (Exception exception) {
             return exception.getMessage();
@@ -70,9 +66,8 @@ public class Person implements Serialazable {
     }
 
 
-    @Override
     public void saveToFile() {
-        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(name))) {
+        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(this.firstName))) {
             outputStream.writeObject(this);
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
